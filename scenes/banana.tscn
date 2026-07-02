@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://diilc57s4bkra"]
+
+[ext_resource type="Script" uid="uid://blx6pub11an56" path="res://scripts/Banana.cs" id="1_a45fu"]
+[ext_resource type="Texture2D" uid="uid://cxfebica1minb" path="res://assets/banana.png" id="1_hilkf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvvh5"]
+radius = 25.0
+
+[node name="Banana" type="Area2D" unique_id=101496928]
+script = ExtResource("1_a45fu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=655117386]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_hilkf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1992153831]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_jvvh5")

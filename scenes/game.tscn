@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dsuopvp6y8qit"]
+
+[ext_resource type="Script" uid="uid://ig7hcrf328fl" path="res://scripts/Game.cs" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://c8myk62w2vhel" path="res://scenes/cursor.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://diilc57s4bkra" path="res://scenes/banana.tscn" id="2_yqjtg"]
+
+[node name="game" type="Node2D" unique_id=149317990]
+script = ExtResource("1_lnu2h")
+
+[node name="Cursor" parent="." unique_id=71562455 instance=ExtResource("1_uwrxv")]
+position = Vector2(634, 335)
+
+[node name="Banana" parent="." unique_id=101496928 instance=ExtResource("2_yqjtg")]
+position = Vector2(843, 477)
+
+[node name="Currency" type="Label" parent="." unique_id=587613690]
+offset_right = 99.0
+offset_bottom = 62.0
