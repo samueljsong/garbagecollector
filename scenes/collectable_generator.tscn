@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://m8se2qhfd744"]
+
+[ext_resource type="Script" uid="uid://cn5dtd6j1e26b" path="res://scripts/CollectableGenerator.cs" id="1_5wgfb"]
+
+[node name="CollectableGenerator" type="Node2D" unique_id=237070331]
+script = ExtResource("1_5wgfb")
+
+[node name="BananaTimer" type="Timer" parent="." unique_id=740803840]

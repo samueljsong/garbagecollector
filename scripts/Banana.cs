@@ -2,9 +2,11 @@ using Godot;
 using System;
 using System.Collections;
 
-public partial class Banana : Area2D
+public partial class Banana : Area2D, ICollectable
 {
-	// Called when the node enters the scene tree for the first time.
+    public int   Strength      { get; set; } = 3;
+    public int   Cost          { get; set; } = 1;
+    public float SpawnInterval { get; set; } = 2.0f;
 	public override void _Ready()
     {
     }
@@ -14,12 +16,9 @@ public partial class Banana : Area2D
 	{
 	}
 
-    public void Collect()
+    public void Collect(Game game)
     {
-        Game game = GetTree().CurrentScene as Game;
-
         game.AddCurrency(1);
-
         QueueFree();
     }
 }

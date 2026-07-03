@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cuppr4g7vndyq"]
+
+[ext_resource type="Texture2D" uid="uid://cxf0cuomfywbm" path="res://assets/ant.png" id="1_4s44o"]
+
+[node name="Ant" type="Node2D" unique_id=962631493]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1085051313]
+scale = Vector2(2, 2)
+texture = ExtResource("1_4s44o")
