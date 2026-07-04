@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://clpk2kt1gslu5"]
+
+[ext_resource type="Texture2D" uid="uid://dxvfwgjfmxx48" path="res://assets/coin.png" id="1_ahhtf"]
+
+[node name="HUD" type="Node2D" unique_id=442860030]
+
+[node name="Currency" type="Label" parent="." unique_id=1953797894]
+offset_left = 92.0
+offset_top = 46.0
+offset_right = 262.0
+offset_bottom = 70.0
+text = "asdfasdf"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1468268021]
+position = Vector2(65, 59)
+texture = ExtResource("1_ahhtf")
