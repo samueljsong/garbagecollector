@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://clpk2kt1gslu5"]
 
 [ext_resource type="Texture2D" uid="uid://dxvfwgjfmxx48" path="res://assets/coin.png" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://fcicb0apdcwd" path="res://scripts/UpgradesOverlay.cs" id="2_5ysmq"]
+[ext_resource type="PackedScene" uid="uid://cedc8cocpcuw3" path="res://scenes/carousel_container.tscn" id="2_oo0fn"]
+[ext_resource type="Script" uid="uid://bydh1g50a2thx" path="res://scripts/UpgradeButton.cs" id="4_6fi6k"]
+[ext_resource type="Script" uid="uid://qavp5qx4mluw" path="res://scripts/CloseUpgradeButton.cs" id="4_uo2fv"]
+[ext_resource type="Script" uid="uid://cbr5t8ccc8n1i" path="res://scripts/RightButton.cs" id="5_5pdws"]
+[ext_resource type="Script" uid="uid://bf25j0uxhrrgy" path="res://scripts/LeftButton.cs" id="6_hd3ao"]
 
 [node name="HUD" type="Node2D" unique_id=442860030]
 
@@ -14,3 +20,94 @@ text = "asdfasdf"
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1468268021]
 position = Vector2(65, 59)
 texture = ExtResource("1_ahhtf")
+
+[node name="UpgradesOverlay" type="CanvasLayer" parent="." unique_id=598765934]
+script = ExtResource("2_5ysmq")
+
+[node name="ColorRect" type="ColorRect" parent="UpgradesOverlay" unique_id=1456502617]
+offset_right = 1281.0
+offset_bottom = 718.0
+color = Color(0, 0, 0, 0.83137256)
+
+[node name="CarouselContainer" parent="UpgradesOverlay" unique_id=1376391469 node_paths=PackedStringArray("_positionOffsetNode") instance=ExtResource("2_oo0fn")]
+z_index = 10
+position = Vector2(641, 353)
+_wraparoundHeight = 100.0
+_positionOffsetNode = NodePath("Control")
+
+[node name="Control" type="Control" parent="UpgradesOverlay/CarouselContainer" unique_id=667481955]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="UpgradesOverlay/CarouselContainer/Control" unique_id=704450094]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 4.625
+anchor_bottom = 7.05
+offset_right = 40.0
+offset_bottom = 18.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="UpgradesOverlay/CarouselContainer/Control" unique_id=1324246876]
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 300.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel3" type="Panel" parent="UpgradesOverlay/CarouselContainer/Control" unique_id=677724265]
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 300.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel4" type="Panel" parent="UpgradesOverlay/CarouselContainer/Control" unique_id=106090340]
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 300.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel5" type="Panel" parent="UpgradesOverlay/CarouselContainer/Control" unique_id=336406984]
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 300.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseUpgradeButton" type="Button" parent="UpgradesOverlay" unique_id=610905565]
+offset_left = 795.0
+offset_top = 144.0
+offset_right = 830.0
+offset_bottom = 180.0
+text = "X"
+script = ExtResource("4_uo2fv")
+
+[node name="RightButton" type="Button" parent="UpgradesOverlay" unique_id=1054487515]
+offset_left = 1156.0
+offset_top = 346.0
+offset_right = 1247.0
+offset_bottom = 377.0
+text = "Right"
+script = ExtResource("5_5pdws")
+
+[node name="LeftButton" type="Button" parent="UpgradesOverlay" unique_id=1342464933]
+offset_left = 45.0
+offset_top = 348.0
+offset_right = 133.0
+offset_bottom = 379.0
+text = "Left"
+script = ExtResource("6_hd3ao")
+
+[node name="UpgradeButton" type="Button" parent="." unique_id=1400346886]
+offset_left = 1177.0
+offset_top = 41.0
+offset_right = 1225.0
+offset_bottom = 64.0
+text = "Upgrades"
+script = ExtResource("4_6fi6k")
+
+[connection signal="pressed" from="UpgradesOverlay/CloseUpgradeButton" to="UpgradesOverlay/CloseUpgradeButton" method="_on_close_upgrade_button_pressed"]
+[connection signal="pressed" from="UpgradesOverlay/RightButton" to="UpgradesOverlay/RightButton" method="_on_pressed"]
+[connection signal="pressed" from="UpgradesOverlay/LeftButton" to="UpgradesOverlay/LeftButton" method="_on_pressed"]
+[connection signal="pressed" from="UpgradeButton" to="UpgradeButton" method="_on_pressed"]

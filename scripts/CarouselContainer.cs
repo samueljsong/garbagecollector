@@ -22,6 +22,22 @@ public partial class CarouselContainer : Node2D
 	{
 	}
 
+    public void Left()
+    {
+        _selectedIndex -= 1;
+        if (_selectedIndex < 0)
+            _selectedIndex += 1;
+    }
+
+    public void Right()
+    {
+        _selectedIndex += 1;
+        if (_selectedIndex > _positionOffsetNode.GetChildCount() - 1)
+        {
+            _selectedIndex -= 1;
+        }
+    }
+
 	public override void _Process(double delta)
     {
         if (_positionOffsetNode == null || _positionOffsetNode.GetChildCount() == 0)
