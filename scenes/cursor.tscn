@@ -12,10 +12,11 @@ scale = Vector2(1.5, 1.5)
 script = ExtResource("1_s0nli")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=992082343]
+position = Vector2(6.666667, 13.333334)
 texture = ExtResource("1_1eco6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=411566234]
-position = Vector2(-6.666667, -13.333334)
 shape = SubResource("CircleShape2D_jvvh5")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1725505415]
+points = PackedVector2Array(-84, 7.3333335)

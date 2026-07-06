@@ -47,7 +47,7 @@ public partial class Cursor : Area2D
         tween.TweenProperty(_sprite, "scale", new Vector2(1.0f, 1.0f), 0.1f);
     }
 
-    private void DrawCircleOutline()
+    public void DrawCircleOutline()
     {
         CircleShape2D circle = _collisionShape.Shape as CircleShape2D;
 

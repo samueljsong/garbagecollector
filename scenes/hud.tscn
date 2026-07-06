@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://fcicb0apdcwd" path="res://scripts/UpgradesOverlay.cs" id="2_5ysmq"]
 [ext_resource type="PackedScene" uid="uid://cedc8cocpcuw3" path="res://scenes/carousel_container.tscn" id="2_oo0fn"]
 [ext_resource type="Script" uid="uid://bydh1g50a2thx" path="res://scripts/UpgradeButton.cs" id="4_6fi6k"]
+[ext_resource type="Script" uid="uid://dr7ecjqwdt4c5" path="res://scripts/UpgradeCursor.cs" id="4_hd3ao"]
 [ext_resource type="Script" uid="uid://qavp5qx4mluw" path="res://scripts/CloseUpgradeButton.cs" id="4_uo2fv"]
 [ext_resource type="Script" uid="uid://cbr5t8ccc8n1i" path="res://scripts/RightButton.cs" id="5_5pdws"]
 [ext_resource type="Script" uid="uid://bf25j0uxhrrgy" path="res://scripts/LeftButton.cs" id="6_hd3ao"]
@@ -45,32 +46,72 @@ metadata/_edit_use_anchors_ = true
 [node name="Panel" type="Panel" parent="UpgradesOverlay/CarouselContainer/Control" unique_id=704450094]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 4.625
-anchor_bottom = 7.05
+anchor_left = -10.475
+anchor_top = 2.0
+anchor_right = -5.85
+anchor_bottom = 9.05
 offset_right = 40.0
 offset_bottom = 18.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel2" type="Panel" parent="UpgradesOverlay/CarouselContainer/Control" unique_id=1324246876]
+[node name="UpgradeCursor" type="Button" parent="UpgradesOverlay/CarouselContainer/Control/Panel" unique_id=2123727083]
 layout_mode = 0
+offset_left = 48.0
+offset_top = 248.0
+offset_right = 178.0
+offset_bottom = 284.0
+text = "Upgrade Cursor"
+script = ExtResource("4_hd3ao")
+
+[node name="Label" type="Label" parent="UpgradesOverlay/CarouselContainer/Control/Panel" unique_id=1730576791]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 31.0
+offset_right = 210.0
+offset_bottom = 240.0
+text = "Upgrade the radius of the area your clicks can reach by 1.5 times."
+autowrap_mode = 2
+
+[node name="Panel2" type="Panel" parent="UpgradesOverlay/CarouselContainer/Control" unique_id=1324246876]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.2
+anchor_top = 2.075
+anchor_right = -4.2
+anchor_bottom = 2.075
 offset_right = 225.0
 offset_bottom = 300.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel3" type="Panel" parent="UpgradesOverlay/CarouselContainer/Control" unique_id=677724265]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.925
+anchor_top = 1.95
+anchor_right = 1.925
+anchor_bottom = 1.95
 offset_right = 225.0
 offset_bottom = 300.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel4" type="Panel" parent="UpgradesOverlay/CarouselContainer/Control" unique_id=106090340]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.1
+anchor_top = 2.075
+anchor_right = 8.1
+anchor_bottom = 2.075
 offset_right = 225.0
 offset_bottom = 300.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel5" type="Panel" parent="UpgradesOverlay/CarouselContainer/Control" unique_id=336406984]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.35
+anchor_top = 2.2
+anchor_right = 14.35
+anchor_bottom = 2.2
 offset_right = 225.0
 offset_bottom = 300.0
 metadata/_edit_use_anchors_ = true
@@ -107,6 +148,7 @@ offset_bottom = 64.0
 text = "Upgrades"
 script = ExtResource("4_6fi6k")
 
+[connection signal="pressed" from="UpgradesOverlay/CarouselContainer/Control/Panel/UpgradeCursor" to="UpgradesOverlay/CarouselContainer/Control/Panel/UpgradeCursor" method="_on_pressed"]
 [connection signal="pressed" from="UpgradesOverlay/CloseUpgradeButton" to="UpgradesOverlay/CloseUpgradeButton" method="_on_close_upgrade_button_pressed"]
 [connection signal="pressed" from="UpgradesOverlay/RightButton" to="UpgradesOverlay/RightButton" method="_on_pressed"]
 [connection signal="pressed" from="UpgradesOverlay/LeftButton" to="UpgradesOverlay/LeftButton" method="_on_pressed"]
